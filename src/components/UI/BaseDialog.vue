@@ -1,22 +1,25 @@
 <template>
-  <!-- grey-out the background with div but also make it clickable -->
-  <div @click="$emit('closeDialog')"></div>
-  <dialog open>
-    <header>
-      <slot name="header">
-        <h2>{{title}}</h2>
-      </slot>
-    </header>
-    <section>
-      <slot></slot>
-    </section>
-    <menu>
-      <slot name="actions">
-        <!-- fallback button in case nothing was inserted for slot -->
-        <base-button @click="$emit('closeDialog')">Close</base-button>
-      </slot>
-    </menu>
-  </dialog>
+  <!-- move dialog to another spot in the dom -->
+  <teleport to="body">
+    <!-- grey-out the background with div but also make it clickable -->
+    <div @click="$emit('closeDialog')"></div>
+    <dialog open>
+      <header>
+        <slot name="header">
+          <h2>{{ title }}</h2>
+        </slot>
+      </header>
+      <section>
+        <slot></slot>
+      </section>
+      <menu>
+        <slot name="actions">
+          <!-- fallback button in case nothing was inserted for slot -->
+          <base-button @click="$emit('closeDialog')">Close</base-button>
+        </slot>
+      </menu>
+    </dialog>
+  </teleport>
 </template>
 
 <script>
