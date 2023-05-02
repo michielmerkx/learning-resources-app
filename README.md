@@ -2,7 +2,7 @@
 
 This is a small Vue app based on a tutorial.
 
-It demonstrates dymanic components in TheResources.vue:
+It demonstrates dynamic components in TheResources.vue:
 
 `<keep-alive>
     <component :is="selectedTab"></component>
@@ -22,8 +22,8 @@ You might come across the following errors:
 
 Error: `ERR_OSSL_EVP_UNSUPPORTED`
 
-https://stackoverflow.com/questions/69394632/webpack-build-failing-with-err-ossl-evp-unsupported
-https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
+1. https://stackoverflow.com/questions/69394632/webpack-build-failing-with-err-ossl-evp-unsupported
+2. https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
 
 Solution: `npm audit fix --force`
 
