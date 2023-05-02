@@ -1,11 +1,23 @@
 # Learning Resources App
 
-This is a small Vue app that demonstrates dynamic components and a reusable dialog window. Based on a tutorial.
+This is a small Vue app based on a tutorial.
+
+It demonstrates dymanic components in TheResources.vue:
+
+`<keep-alive>
+    <component :is="selectedTab"></component>
+  </keep-alive>`
+
+As well as a reusable dialog window in BaseDialog.vue
+
+## Installing
 
 1. Run `npm install` in the extracted project folder to install all required dependencies
 2. Run `npm run serve` to bring up the development server, view the app at localhost:8080
 
-Note: because this is based on starter files from a tutorial, some files might be outdated. 
+## Troubleshooting
+
+Because this is based on starter files from a tutorial, some files might be outdated. 
 You might come across the following errors:
 
 Error: `ERR_OSSL_EVP_UNSUPPORTED`

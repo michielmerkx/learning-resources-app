@@ -1,5 +1,5 @@
 <template>
-  <!-- grey out the bg but also make it clickable -->
+  <!-- grey-out the background with div but also make it clickable -->
   <div @click="$emit('closeDialog')"></div>
   <dialog open>
     <header>
