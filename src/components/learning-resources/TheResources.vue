@@ -49,7 +49,8 @@ export default {
   provide() {
     return {
       theResources: this.storedResources,
-      addResource: this.addResource
+      addResource: this.addResource,
+      deleteItem: this.removeResource
     }
   },
   computed: {
@@ -74,6 +75,18 @@ export default {
         }
       )
       this.selectedTab = 'stored-resources';
+    },
+    removeResource(resId){
+      // This doesn't work because new array is not 'reprovided'.
+      // App will continue working with the original array.
+      // this.storedResources = this.storedResources.filter(
+      //   (res) => res.id !== resId
+      // )
+      // Use the splice method instead, which manipulates original array
+      const resIndex = this.storedResources.findIndex(
+        (res) => res.id === resId
+      );
+      this.storedResources.splice(resIndex, 1)
     }
   }
 }
